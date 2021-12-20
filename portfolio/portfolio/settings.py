@@ -9,12 +9,13 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
-from pathlib import Path
 import os
+from dotenv import load_dotenv
+from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+
 # from decouple import config,Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,15 +26,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@n--!++b46k+gc1c82s9$zigz@8!4rr43kt!el4udbxt7g=bc3'
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+env_path = Path(".env")
+load_dotenv(dotenv_path=env_path)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -82,11 +84,11 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# cloudinary.config(
-#     cloud_name='dei7juemq',
-#     api_key='794715321484646',
-#     api_secret='RBh-2d_GpMGBx51wxCcmoy206o8',
-# )
+cloudinary.config(
+    cloud_name='dei7juemq',
+    api_key='794715321484646',
+    api_secret='RBh-2d_GpMGBx51wxCcmoy206o8',
+)
 
 DATABASES = {
     'default': {
@@ -145,3 +147,16 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# sendgrid info
+CONTACT_EMAIL = 'bensammwaniki@gmail.com'
+ADMIN_EMAIL = ['bensammwaniki@gmail.com' ]
+
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
+SENDGRID_SANDBOX_MODE_IN_DEBUG=False
+SENDGRID_ECHO_TO_STDOUT=True
+
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'apikey'
+# EMAIL_USE_TLS = True
