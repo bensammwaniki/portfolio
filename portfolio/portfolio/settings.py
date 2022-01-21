@@ -149,14 +149,10 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # sendgrid info
-CONTACT_EMAIL = 'bensammwaniki@gmail.com'
-ADMIN_EMAIL = ['bensammwaniki@gmail.com' ]
+CONTACT_EMAIL = 'bensamgraphics@gmail.com'
+ADMIN_EMAIL = ['bensamgraphics@gmail.com' ]
 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 SENDGRID_SANDBOX_MODE_IN_DEBUG=False
 SENDGRID_ECHO_TO_STDOUT=True
-
-# EMAIL_HOST = 'smtp.sendgrid.net'
-# EMAIL_HOST_USER = 'apikey'
-# EMAIL_USE_TLS = True

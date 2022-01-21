@@ -18,7 +18,7 @@ def home(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            email_subject = f'New contact {form.cleaned_data["Email"]}: {form.cleaned_data["subject"]}'
+            email_subject = f'Hi Ben, you have a new message from {form.cleaned_data["Email"]}: {form.cleaned_data["subject"]}'
             user_email = form.cleaned_data["Email"]
             email_message = form.cleaned_data['message']
             send_mail(email_subject, email_message, settings.CONTACT_EMAIL, settings.ADMIN_EMAIL)
