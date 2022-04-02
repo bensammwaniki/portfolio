@@ -1,10 +1,10 @@
-# Newinsta
+# Bensam Mwaniki
 
 #### Created By Bensam on 17-10-2021
 
 ## Description
 
-Newinsta is an Instagram web application to showcase pictures and designs. users can create accounts and can be allowed to comment on other users' images. Users are also allowed to search images by name. This application allows users to like pictures.
+Bensam Mwaniki is an Instagram web application to showcase pictures and designs. users can create accounts and can be allowed to comment on other users' images. Users are also allowed to search images by name. This application allows users to like pictures.
 
 ## Setup Requirements
 
@@ -72,7 +72,7 @@ The following languages have been used on this project:
 ## Screenshot
 
   <img src="./static/img/1.PNG" width="80%">
-    <img src="./static/img/2.png" width="80%">
+  <img src="./static/img/2.png" width="80%">
   <img src="./static/img/3.png" width="80%">
   <img src="./static/img/4.png" width="80%">
 
