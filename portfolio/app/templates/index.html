@@ -19,6 +19,7 @@
           <li><a class="nav-link" href="#services">Services</a></li>
           <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link" href="#contact">Contact</a></li>
+          <li><a class="nav-link" href="#contact"><i class="bi bi-code-slash"></i>  Hire me  <i class="bi bi-pen"></i></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -29,14 +30,6 @@
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
         <a href="#" class="behance"><i class="bi bi-behance"></i></a>
-      </div>
-      <!-- hire me -->
-      <div>
-        <div class="style d-flex justify-content-center hire" id="navbar" style="margin-top: 5%; margin-left: 15px;text-decoration: none;">
-          <div style="width: fit-content;">
-          <a href="#contact" class="btn btn-success nav-link text-light"><i class="bi bi-code-slash"></i>  Hire me  <i class="bi bi-pen"></i></a>
-          </div>
-        </div>
       </div>
     </div>
   </header>
@@ -605,24 +598,18 @@
           <form action="{% url 'testmonials' %}" method="post" enctype="multipart/form-data" role="form" class="php-email-form mt-4">
             {% csrf_token %}
             <div class="row">
-              <div class="col-md-6 form-group">
+              <div class="col-md-12 form-group mt-4">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
               </div>
-              <div class="col-md-6 form-group">
+              <div class="col-md-12 form-group mt-4">
                 <input type="text" name="position" class="form-control" id="name" placeholder="Enter your position" required>
+              </div>          
+              <div class="col-md-12 form-group mt-4">
+                <input type="file" class="form-control" name="image"  id="exampleFormControlFile1">
               </div>
             </div>
-
-            <div class="col-md-6 form-group mt-3">
-              <input type="file" class="form-control-file" name="image"  id="exampleFormControlFile1">
-            </div>
-            <div class="form-group mt-3">
-              <textarea class="form-control" name="testmony" rows="5" placeholder="Message" required></textarea>
-            </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Thank you!</div>
+            <div class="col-md-12 form-group mt-2">
+              <textarea class="col-md-12 form-control mt-4" name="testmony" rows="11" placeholder="Message" required></textarea>
             </div>
             <div class="text-center"><button type="submit">Add a Testimonial</button></div>
           </form>
