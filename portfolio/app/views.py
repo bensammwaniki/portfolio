@@ -39,7 +39,7 @@ def testmony(request):
         image_url = image['url']
         image = Testmonials(name=name, testmony=testmony, image=image_url, position=position)
         image.saving()
-        return render(request, 'index.html', {'success': 'Thank you!'})
+        return redirect('/')
     else:
         return render(request, 'index.html', {'danger': 'Sorry something went wrong'})
 
