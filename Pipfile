@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+python-dotenv = "*"
+cloudinary = "*"
+psycopg2 = "*"
+whitenoise = "*"
+django-sendgrid-v5 = "*"
+gunicorn = "*"
+dj-database-url = "*"
+python-decouple = "*"
+django = "*"
+django-heroku = "*"
+cloudconvert = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
