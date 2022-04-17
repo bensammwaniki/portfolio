@@ -5,7 +5,7 @@ from .models import *
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-
+import cloudconvert
 from .forms import ContactForm
 
 from django.core.mail import EmailMessage
@@ -43,3 +43,23 @@ def testmony(request):
     else:
         return render(request, 'index.html', {'danger': 'Sorry something went wrong'})
 
+def fileConverter(request):
+    if request.method == 'POST':
+        cloudconvert.Job.create(payload={
+            "tasks": {
+                'import-my-file': {
+                    'operation': 'import/url',
+                    'url': 'https://my-url'
+                },
+                'convert-my-file': {
+                    'operation': 'convert',
+                    'input': 'import-my-file',
+                    'output_format': 'pdf',
+                    'some_other_option': 'value'
+                },
+                'export-my-file': {
+                    'operation': 'export/url',
+                    'input': 'convert-my-file'
+                }
+            }
+            })
