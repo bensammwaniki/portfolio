@@ -164,6 +164,6 @@ CONTACT_EMAIL = 'bensamgraphics@gmail.com'
 ADMIN_EMAIL = ['bensammwaniki@gmail.com','bensamgraphics@gmail.com']
 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-SENDGRID_API_KEY = "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"
+SENDGRID_API_KEY = ""
 SENDGRID_SANDBOX_MODE_IN_DEBUG=False
 SENDGRID_ECHO_TO_STDOUT=True
